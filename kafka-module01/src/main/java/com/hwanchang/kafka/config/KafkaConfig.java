@@ -36,7 +36,7 @@ public class KafkaConfig {
     }
 
     @Bean
-    public NewTopic kRequests() {
+    public NewTopic kafkaMessage() {
         return TopicBuilder.name("v1.kafka.message")
                 .partitions(1)
                 .replicas(1)
@@ -44,7 +44,7 @@ public class KafkaConfig {
     }
 
     @Bean
-    public NewTopic kReplies() {
+    public NewTopic kafkaReply() {
         return TopicBuilder.name("v1.kafka.reply")
                 .partitions(1)
                 .replicas(1)
