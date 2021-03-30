@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: kafka
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: kafka-module
+      auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: com.hwanchang.kafka.message
+    producer:
+      bootstrap-servers: localhost:9092
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+    properties:
+      spring.json.value.default.type: com.hwanchang.kafka.message.RequestMessage
